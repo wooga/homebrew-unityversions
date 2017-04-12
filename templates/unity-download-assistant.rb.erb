@@ -1,0 +1,12 @@
+cask 'unity-download-assistant-<%= version %>' do
+  version '<%= version %>,<%= version_hash %>'
+  sha256 '<%= sha256 %>'
+
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/UnityDownloadAssistant-#{version.before_comma}.dmg"
+  name 'Unity'
+  homepage 'https://unity3d.com/unity/'
+
+  installer manual: 'Unity Download Assistant.app'
+
+  uninstall pkgutil: 'com.unity3d.*'
+end
