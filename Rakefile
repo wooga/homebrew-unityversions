@@ -24,15 +24,19 @@ end
 def package_urls
   {
     UNITY => "MacEditorInstaller/Unity.pkg",
+    DOWNLOAD_ASSISTANT => "UnityDownloadAssistant-$VERSION$.dmg",
+    STANDART_ASSETS => "MacStandardAssetsInstaller/StandardAssets-$VERSION$.pkg",
     ANDROID_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-$VERSION$.pkg",
     IOS_SUPPORT => "MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-$VERSION$.pkg",
-    WEBGL_SUPPORT => "MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-$VERSION$.pkg"
+    WEBGL_SUPPORT => "MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-$VERSION$.pkg",
+    WINDOWS_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION$.pkg",
+    LINUX_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION$.pkg"
   }
 end
 
 def packages
   [
-    UNITY,IOS_SUPPORT,ANDROID_SUPPORT,WEBGL_SUPPORT
+    UNITY,IOS_SUPPORT,ANDROID_SUPPORT,WEBGL_SUPPORT,WINDOWS_SUPPORT,LINUX_SUPPORT,STANDART_ASSETS,DOWNLOAD_ASSISTANT
   ]
 end
 
