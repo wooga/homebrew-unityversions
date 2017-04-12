@@ -1,4 +1,4 @@
-cask 'unity-android-support-for-editor-5.4.5f1' do
+cask 'unity-android-support-for-editor@5.4.5f1' do
   version '5.4.5f1,68943b6c8c42'
   sha256 '52cc2cf53b6ac60abe6ab4c83f031c8b8111f1074941f1f6eeada72ac2c1692e'
 

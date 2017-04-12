@@ -37,7 +37,7 @@ def packages
 end
 
 def retrieve_sha256 package_name, version, package_url
-  cache_name = ".cache/#{package_name}-#{version}"
+  cache_name = ".cache/#{package_name}@#{version}"
   sha = ""
   if File.exist?(cache_name) 
     File.open(cache_name){|f|
@@ -71,7 +71,7 @@ task :generate_versions do
       b = binding
 
       template_path = File.join("templates", "#{package_name}.rb.erb")
-      output_path = File.join("Casks", "#{package_name}-#{version}.rb")
+      output_path = File.join("Casks", "#{package_name}@#{version}.rb")
 
       File.open(template_path) do |t|
         erb = ERB.new(t.read)
