@@ -6,7 +6,7 @@ cask 'unity-ios-support-for-editor@5.6.0f3' do
   name 'Unity iOS Build Support'
   homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity'
+  depends_on cask: 'unity@5.6.0f3'
 
   pkg "UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
 

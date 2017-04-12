@@ -6,7 +6,7 @@ cask 'unity-windows-support-for-editor@<%= version %>' do
   name 'Unity Windows Build Support'
   homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity'
+  depends_on cask: 'unity@<%= version %>'
 
   pkg "UnitySetup-Windows-Support-for-Editor-#{version.before_comma}.pkg"
 
