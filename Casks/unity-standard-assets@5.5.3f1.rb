@@ -6,6 +6,42 @@ cask 'unity-standard-assets@5.5.3f1' do
   name 'Unity Standard Assets'
   homepage 'https://unity3d.com/unity'
 
+  preflight do
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+    end
+
+    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
+      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", "/Applications/Unity" 
+    end
+  end
+
+  postflight do
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity-#{@cask.version.before_comma}"
+    end
+
+    if File.exist? "/Applications/Unity.temp"
+        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
+    end
+  end
+
+  uninstall_preflight do
+    if File.exist? "/Applications/Unity"
+      FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+    end
+
+    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
+      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", "/Applications/Unity" 
+    end
+  end
+
+  uninstall_postflight do
+    if File.exist? "/Applications/Unity.temp"
+        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
+    end
+  end
+
   pkg "StandardAssets-#{version.before_comma}.pkg"
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
