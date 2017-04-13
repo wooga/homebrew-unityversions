@@ -1,6 +1,6 @@
 cask 'unity-standard-assets@5.6.0f3' do
   version '5.6.0f3,497a0f351392'
-  sha256 '1ae038287257fd969b49d4d1f4906367aad05224cda71d1fd322485ca0ad5fe6'
+  sha256 '51e7ae5fd7f9a5cf64fbf5a25d7677681935063cb224790dd76f2f9d012a547d'
 
   url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
   name 'Unity Standard Assets'

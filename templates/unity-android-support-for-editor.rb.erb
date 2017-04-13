@@ -50,5 +50,5 @@ cask 'unity-android-support-for-editor@<%= version %>' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.AndroidSupport'
+  uninstall pkgutil: '<%= packages.first%>'
 end

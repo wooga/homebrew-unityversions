@@ -51,5 +51,5 @@ cask 'unity-standard-assets@<%= version %>' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.StandardAssets'
+            pkgutil: '<%= packages.first%>'
 end
