@@ -38,6 +38,7 @@ cask 'unity-android-support-for-editor@5.4.5f1' do
     if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
       FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
     end
+    sleep 100000
   end
 
   uninstall_postflight do
