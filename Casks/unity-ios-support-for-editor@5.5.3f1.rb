@@ -12,7 +12,7 @@ cask 'unity-ios-support-for-editor@5.5.3f1' do
 
   preflight do
     if File.exist? '/Applications/Unity'
-        FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
     end
 
     if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
@@ -32,7 +32,7 @@ cask 'unity-ios-support-for-editor@5.5.3f1' do
 
   uninstall_preflight do
     if File.exist? '/Applications/Unity'
-        FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
     end
 
     if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"

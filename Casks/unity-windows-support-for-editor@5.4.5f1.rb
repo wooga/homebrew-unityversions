@@ -51,5 +51,4 @@ cask 'unity-windows-support-for-editor@5.4.5f1' do
   end
 
   uninstall pkgutil: 'com.unity3d.WindowsStandaloneSupport'
-  
 end
