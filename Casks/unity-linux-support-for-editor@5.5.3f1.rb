@@ -29,19 +29,11 @@ cask 'unity-linux-support-for-editor@5.5.3f1' do
   end
 
   uninstall_preflight do
-    if File.exist? "/Applications/Unity"
-      FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
-    end
-
-    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", "/Applications/Unity" 
-    end
+    @cask.preflight.call
   end
 
   uninstall_postflight do
-    if File.exist? "/Applications/Unity.temp"
-        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
-    end
+    @cask.postflight.call
   end
 
   pkg "UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
