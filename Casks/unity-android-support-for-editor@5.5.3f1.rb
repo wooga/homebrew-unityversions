@@ -31,11 +31,23 @@ cask 'unity-android-support-for-editor@5.5.3f1' do
   end
 
   uninstall_preflight do
-    @cask.preflight.call
+    if File.exist? '/Applications/Unity'
+        FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
+    end
+
+    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
+      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
+    end
   end
 
   uninstall_postflight do
-    @cask.postflight.call
+    if File.exist? '/Applications/Unity'
+      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{@cask.version.before_comma}"
+    end
+
+    if File.exist? '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
+    end
   end
 
   uninstall pkgutil: 'com.unity3d.AndroidSupport'
