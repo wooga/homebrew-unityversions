@@ -1,14 +1,14 @@
-cask 'unity-standard-assets@5.6.0f3' do
-  version '5.6.0f3,497a0f351392'
-  sha256 '1ae038287257fd969b49d4d1f4906367aad05224cda71d1fd322485ca0ad5fe6'
+cask 'unity-android-support-for-editor@5.5.1f1' do
+  version '5.5.1f1,88d00a7498cd'
+  sha256 '76d230d114aa1d034c2f4e49d9238d4e4dc72e7a4137bda0b1cc90fdfdca1ef3'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
-  name 'Unity Standard Assets'
-  homepage 'https://unity3d.com/unity'
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
+  name 'Unity Android Build Support'
+  homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity@5.6.0f3'
+  depends_on cask: 'unity@5.5.1f1'
 
-  pkg "StandardAssets-#{version.before_comma}.pkg"
+  pkg "UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
 
   preflight do
     if File.exist? '/Applications/Unity'
@@ -50,6 +50,5 @@ cask 'unity-standard-assets@5.6.0f3' do
     end
   end
 
-  uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.StandardAssets'
+  uninstall pkgutil: 'com.unity3d.AndroidPlayer'
 end

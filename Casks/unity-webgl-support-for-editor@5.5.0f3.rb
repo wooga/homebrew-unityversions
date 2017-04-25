@@ -1,14 +1,14 @@
-cask 'unity-standard-assets@5.6.0f3' do
-  version '5.6.0f3,497a0f351392'
-  sha256 '1ae038287257fd969b49d4d1f4906367aad05224cda71d1fd322485ca0ad5fe6'
+cask 'unity-webgl-support-for-editor@5.5.0f3' do
+  version '5.5.0f3,38b4efef76f0'
+  sha256 '17532ebcf73d74dec9b1403e6649697dfd39aafac87806a601b70bf713a7a270'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
-  name 'Unity Standard Assets'
-  homepage 'https://unity3d.com/unity'
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
+  name 'Unity WebGL Build Support'
+  homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity@5.6.0f3'
+  depends_on cask: 'unity@5.5.0f3'
 
-  pkg "StandardAssets-#{version.before_comma}.pkg"
+  pkg "UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
 
   preflight do
     if File.exist? '/Applications/Unity'
@@ -50,6 +50,5 @@ cask 'unity-standard-assets@5.6.0f3' do
     end
   end
 
-  uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.StandardAssets'
+  uninstall pkgutil: 'com.unity3d.WebGLSupport'
 end

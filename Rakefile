@@ -12,19 +12,39 @@ WEBGL_SUPPORT = "unity-webgl-support-for-editor"
 WINDOWS_SUPPORT = "unity-windows-support-for-editor"
 UNITY = "unity"
 
-base_url = "http://netstorage.unity3d.com/unity/$VERSION_HASH$"
+BETA_BASE_URL = "http://beta.unity3d.com/download/$VERSION_HASH$"
+BASE_URL = "http://netstorage.unity3d.com/unity/$VERSION_HASH$"
+
+def unity_base_url beta
+  if beta 
+    return BETA_BASE_URL
+  end
+  BASE_URL
+end
+
+def beta? version
+  version.include? 'p'
+end
 
 def versions_map
   {
+
+    "5.6.0p2" => "bbd5ca01a0ea",
     "5.6.0f3" => "497a0f351392",
+    "5.5.3p2" => "f15b2772e4d0",
     "5.5.3f1" => "4d2f809fd6f3",
+    "5.5.2f1" => "3829d7f588f3",
+    "5.5.1f1" => "88d00a7498cd",
+    "5.5.0f3" => "38b4efef76f0",
     "5.4.5f1" => "68943b6c8c42"
   }
 end
 
-def package_urls
+def package_urls beta
+  beta_release = { UNITY => "MacEditorInstaller/Unity-$VERSION$.pkg" }
+  release = { UNITY => "MacEditorInstaller/Unity.pkg" }
+  extra = (beta) ? beta_release : release
   {
-    UNITY => "MacEditorInstaller/Unity.pkg",
     DOWNLOAD_ASSISTANT => "UnityDownloadAssistant-$VERSION$.dmg",
     STANDART_ASSETS => "MacStandardAssetsInstaller/StandardAssets-$VERSION$.pkg",
     ANDROID_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-$VERSION$.pkg",
@@ -32,7 +52,7 @@ def package_urls
     WEBGL_SUPPORT => "MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-$VERSION$.pkg",
     WINDOWS_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-$VERSION$.pkg",
     LINUX_SUPPORT => "MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-$VERSION$.pkg"
-  }
+  }.merge(extra)
 end
 
 def packages
@@ -74,6 +94,7 @@ def retrieve_sha256 package_name, version, version_hash, package_url
     return sha.strip
   end
 
+  FileUtils.mkdir_p(File.expand_path('~/Library/Caches/Homebrew/Cask'))
   Dir.chdir(File.expand_path('~/Library/Caches/Homebrew/Cask')) {|dir|
     extension = File.extname package_url
     file_name = "#{package_name}@#{version}--#{version},#{version_hash}#{extension}"
@@ -87,6 +108,7 @@ def retrieve_sha256 package_name, version, version_hash, package_url
   sha
 end
 
+desc "generate version casks"
 task :generate_versions do
   puts "Generate unity cask version files"
 
@@ -94,8 +116,12 @@ task :generate_versions do
     packages.each do |package_name|
       puts "------------------------------------------------------"
       puts "generate pakage: #{package_name}-#{version}"
+      puts "is beta: #{beta? version}"
 
-      package_url = File.join(base_url, package_urls[package_name]).gsub("$VERSION_HASH$", version_hash).gsub("$VERSION$", version)
+      base_url = unity_base_url beta?(version)
+      package_url = package_urls(beta?(version))[package_name]
+
+      package_url = File.join(base_url, package_url).gsub("$VERSION_HASH$", version_hash).gsub("$VERSION$", version)
       sha256 = retrieve_sha256 package_name, version, version_hash, package_url
       packages = retrieve_package_ids package_name, version, version_hash, package_url
       
@@ -120,6 +146,7 @@ task :generate_versions do
   end
 end
 
+desc "clean download and sha cache"
 task :clean_cache do
   FileUtils.remove_dir(".cache")
 end
