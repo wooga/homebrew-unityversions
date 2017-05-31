@@ -2,7 +2,7 @@ cask 'unity-windows-support-for-editor@5.5.3p2' do
   version '5.5.3p2,f15b2772e4d0'
   sha256 'd1949c94ef8848b16767268f55176cefcbe534d786f4753236c1445479b91a99'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-#{version.before_comma}.pkg"
+  url "http://beta.unity3d.com/download/f15b2772e4d0/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.5.3p2.pkg"
   name 'Unity Windows Build Support'
   homepage 'https://unity3d.com/unity/'
 

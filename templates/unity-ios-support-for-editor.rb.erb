@@ -2,7 +2,7 @@ cask 'unity-ios-support-for-editor@<%= version %>' do
   version '<%= version %>,<%= version_hash %>'
   sha256 '<%= sha256 %>'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
+  url "<%=package_url %>"
   name 'Unity iOS Build Support'
   homepage 'https://unity3d.com/unity/'
 
