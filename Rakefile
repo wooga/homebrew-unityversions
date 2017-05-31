@@ -12,8 +12,8 @@ WEBGL_SUPPORT = "unity-webgl-support-for-editor"
 WINDOWS_SUPPORT = "unity-windows-support-for-editor"
 UNITY = "unity"
 
-BETA_BASE_URL = "http://beta.unity3d.com/download/$VERSION_HASH$"
-BASE_URL = "http://netstorage.unity3d.com/unity/$VERSION_HASH$"
+BETA_BASE_URL = "http://beta.unity3d.com/download"
+BASE_URL = "http://netstorage.unity3d.com/unity"
 
 def unity_base_url beta
   if beta 
@@ -121,7 +121,7 @@ task :generate_versions do
       base_url = unity_base_url beta?(version)
       package_url = package_urls(beta?(version))[package_name]
 
-      package_url = File.join(base_url, package_url).gsub("$VERSION_HASH$", version_hash).gsub("$VERSION$", version)
+      package_url = File.join(base_url, version_hash, package_url).gsub("$VERSION$", version)
       sha256 = retrieve_sha256 package_name, version, version_hash, package_url
       packages = retrieve_package_ids package_name, version, version_hash, package_url
       

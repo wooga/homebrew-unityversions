@@ -2,7 +2,7 @@ cask 'unity-linux-support-for-editor@5.6.1p1' do
   version '5.6.1p1,74c1f4917542'
   sha256 'f7cb80503d56e67252173d495a5f8ee979a4fc8f62088a6b13284cff8dc6cd16'
 
-  url "http://beta.unity3d.com/download/74c1f4917542/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-5.6.1p1.pkg"
+  url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity Linux Build Support'
   homepage 'https://unity3d.com/unity/'
 

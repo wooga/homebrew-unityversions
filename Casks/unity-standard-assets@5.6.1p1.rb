@@ -2,7 +2,7 @@ cask 'unity-standard-assets@5.6.1p1' do
   version '5.6.1p1,74c1f4917542'
   sha256 '0639bf6185b04aaf458b667b8a63826ffea91e687dde076464bf0e6bbed144bb'
 
-  url "http://beta.unity3d.com/download/74c1f4917542/MacStandardAssetsInstaller/StandardAssets-5.6.1p1.pkg"
+  url "http://beta.unity3d.com/download/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
   name 'Unity Standard Assets'
   homepage 'https://unity3d.com/unity'
 

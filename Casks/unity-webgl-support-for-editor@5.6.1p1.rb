@@ -2,7 +2,7 @@ cask 'unity-webgl-support-for-editor@5.6.1p1' do
   version '5.6.1p1,74c1f4917542'
   sha256 'b1d965a0024bb6c2992df60e06eaa7d0c7cac9cdecb55b4a64b1829ca7137083'
 
-  url "http://beta.unity3d.com/download/74c1f4917542/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-5.6.1p1.pkg"
+  url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity WebGL Build Support'
   homepage 'https://unity3d.com/unity/'
 

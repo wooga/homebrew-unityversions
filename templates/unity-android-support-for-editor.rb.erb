@@ -2,7 +2,7 @@ cask 'unity-android-support-for-editor@<%= version %>' do
   version '<%= version %>,<%= version_hash %>'
   sha256 '<%= sha256 %>'
 
-  url "<%=package_url %>"
+  url "<%= base_url%>/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity Android Build Support'
   homepage 'https://unity3d.com/unity/'
 

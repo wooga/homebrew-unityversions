@@ -4,7 +4,7 @@ cask 'unity@<%= version %>' do
   version '<%= version %>,<%= version_hash %>'
   sha256 '<%= sha256 %>'
 
-  url "<%=package_url %>"
+  url "<%= base_url%>/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
   name 'Unity Editor'
   homepage 'https://unity3d.com/unity/'
 
