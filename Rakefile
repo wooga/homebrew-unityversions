@@ -23,11 +23,12 @@ def unity_base_url beta
 end
 
 def beta? version
-  version.include? 'p'
+  !version.include? 'f'
 end
 
 def versions_map
   {
+    "2017.1.0b7" => "8a1ad67dc191",
     "5.6.1p1" => "74c1f4917542",
     "5.6.0p2" => "bbd5ca01a0ea",
     "5.6.0f3" => "497a0f351392",
