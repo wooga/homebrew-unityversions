@@ -1,6 +1,6 @@
 cask 'unity-webgl-support-for-editor@2017.1.0b7' do
   version '2017.1.0b7,8a1ad67dc191'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  sha256 '35aa140efe32cdfb18fd67fee2aa9813699c076e23fe380f5a6299b0239f9e09'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity WebGL Build Support'
@@ -50,5 +50,5 @@ cask 'unity-webgl-support-for-editor@2017.1.0b7' do
     end
   end
 
-  uninstall pkgutil: ''
+  uninstall pkgutil: 'com.unity3d.WebGLSupport'
 end

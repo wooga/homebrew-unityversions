@@ -1,6 +1,6 @@
 cask 'unity-linux-support-for-editor@2017.1.0b7' do
   version '2017.1.0b7,8a1ad67dc191'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  sha256 'f3b519e99a66647c8c96f6fcf0100c25c145dea06e236f1aa366e6cc2d380401'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity Linux Build Support'
@@ -50,5 +50,5 @@ cask 'unity-linux-support-for-editor@2017.1.0b7' do
     end
   end
 
-  uninstall pkgutil: ''
+  uninstall pkgutil: 'com.unity3d.LinuxStandaloneSupport'
 end

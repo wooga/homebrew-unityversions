@@ -1,6 +1,6 @@
 cask 'unity-download-assistant@2017.1.0b7' do
   version '2017.1.0b7,8a1ad67dc191'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  sha256 '4dd770ffc13ccca9de86d18c6c212b375c2b1bedef1d54d8e4eee538f1e8fb93'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/UnityDownloadAssistant-#{version.before_comma}.dmg"
   name 'Unity'

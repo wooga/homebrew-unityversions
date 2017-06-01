@@ -1,6 +1,6 @@
 cask 'unity-ios-support-for-editor@2017.1.0b7' do
   version '2017.1.0b7,8a1ad67dc191'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  sha256 'b4bd08653f00b17cfa509d45813aede39529daccff9152353bfd2e07384dfc78'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity iOS Build Support'
@@ -50,5 +50,5 @@ cask 'unity-ios-support-for-editor@2017.1.0b7' do
     end
   end
 
-  uninstall pkgutil: ''
+  uninstall pkgutil: 'com.unity3d.iOSSupport'
 end

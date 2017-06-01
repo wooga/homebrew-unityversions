@@ -1,6 +1,6 @@
 cask 'unity-standard-assets@2017.1.0b7' do
   version '2017.1.0b7,8a1ad67dc191'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  sha256 '38ec5ca9ed67ef11a6bbd67738ac377e2876fa7966cb89fa53527f89b7a69d32'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
   name 'Unity Standard Assets'
@@ -51,5 +51,5 @@ cask 'unity-standard-assets@2017.1.0b7' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: ''
+            pkgutil: 'com.unity3d.StandardAssets'
 end
