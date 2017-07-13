@@ -25,6 +25,13 @@ brew cask install unity@2017.1.0f3
 brew cask install unity-android-support-for-editor@2017.1.0f3
 ```
 
+Unity will be install under `/Applications/Unity-$VERSION`. You can install multiple versions at the same time. All support packages will be installed in the parent Unity directory. Means:
+
+`unity-android-support-for-editor@2017.1.0f3` --> `/Applications/Unity-2017.1.0f3/PlaybackEngines/`
+
+If you have a unity version installed under `/Applications/Unity/` it will be moved to
+`/Applications/Unity.temp` for the time of the installation.
+
 Unity Versions available
 ------------------------
 
@@ -52,4 +59,4 @@ This generates the cask files.
 
 License
 -------
-[MIT License](LICENSE)
+[MIT License](LICENSE) Copyright (C) 2017 Wooga
