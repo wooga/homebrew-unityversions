@@ -10,7 +10,7 @@ Usage
 To install unity versions form this cask simply tap this repository
 
 ```bash
-brew tap wooga/unityversions
+brew tap FluffyFairyGames/homebrew-unityversions
 ```
 
 Now you can install any version hosted as cask with
