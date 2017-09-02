@@ -50,6 +50,7 @@ Unity Versions available
 | 5.5.2f1    |
 | 5.5.1f1    |
 | 5.5.0f3    |
+| 5.4.5p5    |
 | 5.4.5f1    |
 
 Adding a new Version
