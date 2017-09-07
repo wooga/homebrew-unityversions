@@ -37,6 +37,7 @@ Unity Versions available
 
 | Version    |
 | ---------: |
+| 2017.1.1f1 |
 | 2017.1.0f3 |
 | 2017.1.0b7 |
 | 5.6.2f1    |
