@@ -32,7 +32,7 @@ cask 'unity@5.5.5f1' do
     end
 
     if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", "/Applications/Unity" 
+      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", "/Applications/Unity"
     end
   end
 
