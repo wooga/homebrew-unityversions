@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unity-standard-assets.2017.1.0f3</id>
-    <version>2017.1.0f3</version>
+    <version>2017.1.0</version>
     <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity-standard-assets.2017.1.0f3</packageSourceUrl>
     <owners>LudicrousByte</owners>
     <title>Unity Standard Assets</title>

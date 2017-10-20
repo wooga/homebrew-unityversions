@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unity.2017.1.2f1</id>
-    <version>2017.1.2f1</version>
+    <version>2017.1.2</version>
     <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity.2017.1.2f1</packageSourceUrl>
     <owners>wooga</owners>
     <title>Unity 2017.1.2f1 (Install)</title>

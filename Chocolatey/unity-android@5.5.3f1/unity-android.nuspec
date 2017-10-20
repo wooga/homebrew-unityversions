@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unity-android.5.5.3f1</id>
-    <version>5.5.3f1</version>
+    <version>5.5.3</version>
     <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity-android.5.5.3f1</packageSourceUrl>
     <owners>wooga</owners>
     <title>Unity Android Target Support for 5.5.3f1</title>
