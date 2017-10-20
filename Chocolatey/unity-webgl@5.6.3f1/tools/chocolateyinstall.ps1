@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName    = 'unity-webgl@5.6.3f1'
+$packageName    = 'unity-webgl.5.6.3f1'
 $toolsDir       = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url64          = 'http://netstorage.unity3d.com/unity/d3101c3b8468/TargetSupportInstaller/UnitySetup-WebGL-Support-for-Editor-5.6.3f1.exe'
 $checksum64     = '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'

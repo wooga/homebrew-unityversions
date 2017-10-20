@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName    = 'unity-android@2017.2.0f3'
+$packageName    = 'unity-android.2017.2.0f3'
 $toolsDir       = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url64          = 'http://netstorage.unity3d.com/unity/46dda1414e51/TargetSupportInstaller/UnitySetup-Android-Support-for-Editor-2017.2.0f3.exe'
 $checksum64     = 'ae406384a16dd6612e68460b263218ddc54b3e392900deef49e25e28ce1f96d5'

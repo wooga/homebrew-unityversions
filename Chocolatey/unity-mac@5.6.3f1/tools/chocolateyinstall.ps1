@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName    = 'unity-mac@5.6.3f1'
+$packageName    = 'unity-mac.5.6.3f1'
 $toolsDir       = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url64          = 'http://netstorage.unity3d.com/unity/d3101c3b8468/TargetSupportInstaller/UnitySetup-Mac-Support-for-Editor-5.6.3f1.exe'
 $checksum64     = '4d542ceca5b5da53c87d08229098ee5f43acf79360ea3fbdc657a61c8c0000fc'

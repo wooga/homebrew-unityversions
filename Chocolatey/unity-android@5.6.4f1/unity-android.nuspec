@@ -2,9 +2,9 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>unity-android@5.6.4f1</id>
+    <id>unity-android.5.6.4f1</id>
     <version>5.6.4f1</version>
-    <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity-android@5.6.4f1</packageSourceUrl>
+    <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity-android.5.6.4f1</packageSourceUrl>
     <owners>wooga</owners>
     <title>Unity Android Target Support for 5.6.4f1</title>
     <authors>Unity Technologies</authors>
@@ -23,7 +23,7 @@ This package adds Android Target Support to Unity.
 * [Release Notes](https://unity3d.com/unity/whats-new/)
     </releaseNotes>
     <dependencies>
-      <dependency id="unity@5.6.4f1" version="5.6.4f1" />
+      <dependency id="unity.5.6.4f1" version="5.6.4f1" />
     </dependencies>
   </metadata>
   <files>
