@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unity@5.5.5f1</id>
+    <version>5.5.5f1</version>
+    <packageSourceUrl>https://github.com/wooga/homebrew-unityversions/tree/master/chocolatey/unity@5.5.5f1</packageSourceUrl>
+    <owners>wooga</owners>
+    <title>Unity 5.5.5f1 (Install)</title>
+    <authors>Unity Technologies</authors>
+    <projectUrl>https://unity3d.com/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/jtcmedia/chocolatey-packages/unity-icon/icons/unity.png</iconUrl>
+    <copyright>Copyright © 2017 Unity Technologies</copyright>
+    <licenseUrl>https://unity3d.com/legal/terms-of-service/software</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://docs.unity3d.com/Manual/index.html</docsUrl>
+    <tags>unity admin games cross-platform unity3d ide editor 3d vr multiplatform</tags>
+    <summary>Unity is a cross-platform game creation system developed by Unity Technologies and used to develop video games for PC, consoles, mobile devices and websites.</summary>
+    <description>
+### Package Specific
+#### Package Parameters
+The following package parameters can be set:
+
+ * `/InstallationPath:` - Where to install the editor. **Path must already exist.** - defaults to "`C:\Program Files\Unity`"
+
+To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
+
+To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+    </description>
+    <releaseNotes>
+* [Release Notes](https://unity3d.com/unity/whats-new/)
+    </releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
