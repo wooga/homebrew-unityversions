@@ -1,54 +1,31 @@
 cask 'unity-linux-support-for-editor@2018.2.5f1' do
   version '2018.2.5f1,3071d1717b71'
-  sha256 'a7e9d5bba58edc0968e4a30a72456f559e49378e3242ee8519e19b6f9dc93465'
+  sha256 :no_check
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
-  name 'Unity Linux Build Support'
+  url "https://download.unity3d.com/download_unity/3071d1717b71/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-2018.2.5f1.pkg"
+  name 'Linux Build Support'
   homepage 'https://unity3d.com/unity/'
+
+  pkg 'UnitySetup-Linux-Support-for-Editor-2018.2.5f1.pkg'
 
   depends_on cask: 'unity@2018.2.5f1'
 
-  pkg "UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
-
   preflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
-    end
-
-    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
     end
   end
 
   postflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{@cask.version.before_comma}"
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity-2018.2.5f1"
     end
 
-    if File.exist? '/Applications/Unity.temp'
-      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
-    end
-  end
-
-  uninstall_preflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
-    end
-
-    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
+    if File.exist? "/Applications/Unity.temp"
+        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
     end
   end
 
-  uninstall_postflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{@cask.version.before_comma}"
-    end
-
-    if File.exist? '/Applications/Unity.temp'
-      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
-    end
-  end
-
-  uninstall pkgutil: 'com.unity3d.LinuxStandaloneSupport'
+  uninstall quit:    'com.unity3d.UnityEditor5.x',
+            delete:  '/Applications/Unity-2018.2.5f1'
 end

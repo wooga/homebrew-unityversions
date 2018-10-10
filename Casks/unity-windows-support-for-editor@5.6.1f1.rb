@@ -1,54 +1,31 @@
 cask 'unity-windows-support-for-editor@5.6.1f1' do
   version '5.6.1f1,2860b30f0b54'
-  sha256 'b052f305bd4be08a4ed86c166d3b2f16b72d7b1002f95e78c5b1efb4aa94d485'
+  sha256 :no_check
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-#{version.before_comma}.pkg"
-  name 'Unity Windows Build Support'
+  url "https://download.unity3d.com/download_unity/2860b30f0b54/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-5.6.1f1.pkg"
+  name 'Windows Build Support'
   homepage 'https://unity3d.com/unity/'
+
+  pkg 'UnitySetup-Windows-Support-for-Editor-5.6.1f1.pkg'
 
   depends_on cask: 'unity@5.6.1f1'
 
-  pkg "UnitySetup-Windows-Support-for-Editor-#{version.before_comma}.pkg"
-
   preflight do
-    if File.exist? '/Applications/Unity'
-        FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
-    end
-
-    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
     end
   end
 
   postflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{@cask.version.before_comma}"
+    if File.exist? "/Applications/Unity"
+        FileUtils.move "/Applications/Unity", "/Applications/Unity-5.6.1f1"
     end
 
-    if File.exist? '/Applications/Unity.temp'
-      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
-    end
-  end
-
-  uninstall_preflight do
-    if File.exist? '/Applications/Unity'
-        FileUtils.move '/Applications/Unity', '/Applications/Unity.temp'
-    end
-
-    if File.exist? "/Applications/Unity-#{@cask.version.before_comma}"
-      FileUtils.move "/Applications/Unity-#{@cask.version.before_comma}", '/Applications/Unity'
+    if File.exist? "/Applications/Unity.temp"
+        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
     end
   end
 
-  uninstall_postflight do
-    if File.exist? '/Applications/Unity'
-      FileUtils.move '/Applications/Unity', "/Applications/Unity-#{@cask.version.before_comma}"
-    end
-
-    if File.exist? '/Applications/Unity.temp'
-      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
-    end
-  end
-
-  uninstall pkgutil: 'com.unity3d.WindowsStandaloneSupport'
+  uninstall quit:    'com.unity3d.UnityEditor5.x',
+            delete:  '/Applications/Unity-5.6.1f1'
 end
