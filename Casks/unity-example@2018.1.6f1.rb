@@ -31,5 +31,5 @@ cask 'unity-example@2018.1.6f1' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-2018.1.6f1'
+            delete:  '/Users/Shared/Unity'
 end

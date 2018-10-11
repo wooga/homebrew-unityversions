@@ -31,5 +31,5 @@ cask 'unity-appletv-support-for-editor@2018.1.7f1' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-2018.1.7f1'
+            delete:  '/Applications/Unity-2018.1.7f1/PlaybackEngines/AppleTVSupport'
 end

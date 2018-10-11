@@ -31,5 +31,5 @@ cask 'unity-windows-support-for-editor@5.6.0f3' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-5.6.0f3'
+            delete:  '/Applications/Unity-5.6.0f3/PlaybackEngines/WindowsStandaloneSupport'
 end

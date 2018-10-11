@@ -31,5 +31,5 @@ cask 'unity-vuforia-ar-support-for-editor@2017.4.3f1' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-2017.4.3f1'
+            delete:  '/Applications/Unity-2017.4.3f1/PlaybackEngines/VuforiaSupport'
 end

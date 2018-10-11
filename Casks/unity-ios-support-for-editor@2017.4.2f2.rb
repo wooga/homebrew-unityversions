@@ -31,5 +31,5 @@ cask 'unity-ios-support-for-editor@2017.4.2f2' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-2017.4.2f2'
+            delete:  '/Applications/Unity-2017.4.2f2/PlaybackEngines'
 end

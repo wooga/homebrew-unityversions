@@ -31,5 +31,5 @@ cask 'unity-samsung-tv-support-for-editor@2017.2.1f1' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            delete:  '/Applications/Unity-2017.2.1f1'
+            delete:  '/Applications/Unity-2017.2.1f1/PlaybackEngines/STVPlayer'
 end
