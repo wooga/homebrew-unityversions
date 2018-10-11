@@ -8,8 +8,6 @@ cask 'unity@2017.3.0f1' do
 
   pkg 'Unity.pkg'
 
-  
-
   preflight do
     if File.exist? "/Applications/Unity"
         FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"

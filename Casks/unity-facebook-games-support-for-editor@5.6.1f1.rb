@@ -12,17 +12,21 @@ cask 'unity-facebook-games-support-for-editor@5.6.1f1' do
 
   preflight do
     if File.exist? "/Applications/Unity"
-        FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+      FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+    end
+
+    if File.exist? "/Applications/Unity-5.6.1f1"
+      FileUtils.move "/Applications/Unity-5.6.1f1", '/Applications/Unity'
     end
   end
 
   postflight do
-    if File.exist? "/Applications/Unity"
-        FileUtils.move "/Applications/Unity", "/Applications/Unity-5.6.1f1"
+    if File.exist? '/Applications/Unity'
+      FileUtils.move '/Applications/Unity', "/Applications/Unity-5.6.1f1"
     end
 
-    if File.exist? "/Applications/Unity.temp"
-        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
+    if File.exist? '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
     end
   end
 

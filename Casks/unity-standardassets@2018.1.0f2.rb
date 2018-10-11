@@ -12,17 +12,21 @@ cask 'unity-standardassets@2018.1.0f2' do
 
   preflight do
     if File.exist? "/Applications/Unity"
-        FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+      FileUtils.move "/Applications/Unity", "/Applications/Unity.temp"
+    end
+
+    if File.exist? "/Applications/Unity-2018.1.0f2"
+      FileUtils.move "/Applications/Unity-2018.1.0f2", '/Applications/Unity'
     end
   end
 
   postflight do
-    if File.exist? "/Applications/Unity"
-        FileUtils.move "/Applications/Unity", "/Applications/Unity-2018.1.0f2"
+    if File.exist? '/Applications/Unity'
+      FileUtils.move '/Applications/Unity', "/Applications/Unity-2018.1.0f2"
     end
 
-    if File.exist? "/Applications/Unity.temp"
-        FileUtils.move "/Applications/Unity.temp", "/Applications/Unity"
+    if File.exist? '/Applications/Unity.temp'
+      FileUtils.move '/Applications/Unity.temp', '/Applications/Unity'
     end
   end
 
