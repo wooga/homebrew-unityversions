@@ -32,6 +32,36 @@ Unity will be install under `/Applications/Unity-$VERSION`. You can install mult
 If you have a unity version installed under `/Applications/Unity/` it will be moved to
 `/Applications/Unity.temp` for the time of the installation.
 
+Available Unity build packages
+-------------------------------
+```bash
+brew cask install unity-android-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-ios-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-appletv-ar-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-linux-ar-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-mac-il2cpp-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-vuforia-ar-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-webgl-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-windows-mono-support-for-editor@2018.2.15f1
+```
+```bash
+brew cask install unity-facebook-games-support-for-editor@2018.2.15f1
+```
+
 Unity Versions available
 ------------------------
 
