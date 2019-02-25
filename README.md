@@ -10,7 +10,7 @@ Usage
 To install unity versions from this cask simply tap this repository
 
 ```bash
-brew tap FluffyFairyGames/homebrew-unityversions
+brew tap KolibriGames/homebrew-unityversions
 ```
 
 To update the avaiable unity versions from this cask simply use
