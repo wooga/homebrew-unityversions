@@ -1,8 +1,8 @@
 require 'fileutils'
 
 cask 'unity@2017.4.16f1' do
-  version '2017.4.16f1,7f7bdd1ef0'
-  sha256 '1e3b732162edb42ae45db702e9833d67a58ae5132f2541e78028a1425c3c83df'
+  version '2017.4.16f1,7f7bdd1ef02b'
+  sha256 'e9943acb17cadf6d3e7956ed57e5fc1691905a1273d85c5387f085d576be1a83'
 
   url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
   name 'Unity Editor'
