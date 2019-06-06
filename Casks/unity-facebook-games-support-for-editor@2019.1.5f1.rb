@@ -1,8 +1,8 @@
 cask 'unity-facebook-games-support-for-editor@2019.1.5f1' do
-  version '2019.1.5f1,6f1140cf2297'
+  version '2019.1.5f1,0ca0f5646614'
   sha256 :no_check
 
-  url "https://download.unity3d.com/download_unity/6f1140cf2297/MacEditorTargetInstaller/UnitySetup-Facebook-Games-Support-for-Editor-2019.1.5f1.pkg"
+  url "https://download.unity3d.com/download_unity/0ca0f5646614/MacEditorTargetInstaller/UnitySetup-Facebook-Games-Support-for-Editor-2019.1.5f1.pkg"
   name 'Facebook Gameroom Build Support'
   homepage 'https://unity3d.com/unity/'
 
