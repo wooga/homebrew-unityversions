@@ -43,6 +43,7 @@ Unity Versions available
 
 | Version     |
 | ---------:  |
+| 2018.4.5f1  |
 | 2018.2.0f2  |
 | 2017.4.11f1 |
 | 2017.4.21f1 |
