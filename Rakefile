@@ -16,7 +16,7 @@ BETA_BASE_URL = "http://beta.unity3d.com/download"
 BASE_URL = "http://netstorage.unity3d.com/unity"
 
 def unity_base_url beta
-  if beta 
+  if beta
     return BETA_BASE_URL
   end
   BASE_URL
@@ -28,6 +28,7 @@ end
 
 def versions_map
   {
+    "2018.4.17f1" => "b830f56f42f0",
     "2018.4.5f1" => "7b38f8ac282e",
     "2018.2.0f2" => "787658998520",
     "2017.4.34f1" => "121f18246307",
@@ -45,7 +46,7 @@ def versions_map
     "2017.2.0f3" => "46dda1414e51",
     "2017.1.2f1" => "cc85bf6a8a04",
     "2017.1.1p4" => "4b0ddcd3f6ad",
-    "2017.1.1f1" => "5d30cf096e79", 
+    "2017.1.1f1" => "5d30cf096e79",
     "2017.1.0f3" => "472613c02cf7",
     "2017.1.0b7" => "8a1ad67dc191",
     "5.6.2f1" => "a2913c821e27",
@@ -89,7 +90,7 @@ end
 def retrieve_package_ids package_name, version, version_hash, package_url
   cache_name = ".cache/#{package_name}-ids@#{version}"
   packages = []
-  if File.exist?(cache_name) 
+  if File.exist?(cache_name)
     File.open(cache_name){|f|
       packages = f.read.lines
     }
@@ -101,18 +102,18 @@ def retrieve_package_ids package_name, version, version_hash, package_url
     file_name = "#{package_name}@#{version}--#{version},#{version_hash}#{extension}"
     `curl -o #{file_name} -L -s #{package_url}` unless File.exist? file_name
     out = `"$(brew --repository)/Library/Taps/caskroom/homebrew-cask/developer/bin/list_ids_in_pkg" #{File.join(dir,"#{file_name}")}`
-    packages = out.lines.map {|line| line.gsub('(+)','').strip}  
+    packages = out.lines.map {|line| line.gsub('(+)','').strip}
   }
   FileUtils.mkdir_p(".cache")
   File.open(cache_name, "w") {|f| f.write(packages.join('\n'))}
-  packages  
+  packages
 end
 
 def retrieve_sha256 package_name, version, version_hash, package_url
   cache_name = ".cache/#{package_name}-sha256@#{version}"
   sha = ""
-  
-  if File.exist?(cache_name) 
+
+  if File.exist?(cache_name)
     File.open(cache_name){|f|
       sha = f.read
     }
@@ -149,13 +150,13 @@ task :generate_versions do
       package_url = File.join(base_url, version_hash, package_url).gsub("$VERSION$", version)
       sha256 = retrieve_sha256 package_name, version, version_hash, package_url
       packages = retrieve_package_ids package_name, version, version_hash, package_url
-      
+
       puts "package-version: #{version},#{version_hash}"
       puts "package_url: #{package_url}"
       puts "package sha256: #{sha256}"
       puts "package ids: #{packages}"
       puts ""
-      
+
       b = binding
 
       template_path = File.join("templates", "#{package_name}.rb.erb")
@@ -177,5 +178,3 @@ task :clean_cache do
 end
 
 task :default => :generate_versions
-
-

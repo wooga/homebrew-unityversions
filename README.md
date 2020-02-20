@@ -2,7 +2,7 @@ homebrew-unityversions
 ======================
 
 [![Build Status](https://travis-ci.org/wooga/homebrew-unityversions.svg?branch=master)](https://travis-ci.org/wooga/homebrew-unityversions)
-Experimental Unity version Brew Cask 
+Experimental Unity version Brew Cask
 
 Usage
 -----
@@ -43,6 +43,7 @@ Unity Versions available
 
 | Version     |
 | ---------:  |
+| 2018.4.17f1 |
 | 2018.4.5f1  |
 | 2018.2.0f2  |
 | 2017.4.11f1 |
