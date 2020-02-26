@@ -2,7 +2,7 @@ cask 'unity-linux-support-for-editor@2018.2.0f2' do
   version '2018.2.0f2,787658998520'
   sha256 '0625460a31b2f44d409a52d39fb145b9f88f87999766715350b367f7cf0f9110'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
+  url "http://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Linux-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity Linux Build Support'
   homepage 'https://unity3d.com/unity/'
 

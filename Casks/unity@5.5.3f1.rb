@@ -4,7 +4,7 @@ cask 'unity@5.5.3f1' do
   version '5.5.3f1,4d2f809fd6f3'
   sha256 '3d9174919b3fd0adc0a749f8627a18715671720d54d2eb055bcbd33cd2f8b12b'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
+  url "http://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
   name 'Unity Editor'
   homepage 'https://unity3d.com/unity/'
 

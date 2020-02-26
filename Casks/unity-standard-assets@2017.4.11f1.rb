@@ -2,7 +2,7 @@ cask 'unity-standard-assets@2017.4.11f1' do
   version '2017.4.11f1,8c6b8ef6d111'
   sha256 'f3f9e589c13fd5ef6f040d230adc205491b7a9fe323898aa5b35e0dc1ffb2b6b'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
+  url "http://download.unity3d.com/download_unity/#{version.after_comma}/MacStandardAssetsInstaller/StandardAssets-#{version.before_comma}.pkg"
   name 'Unity Standard Assets'
   homepage 'https://unity3d.com/unity'
 
