@@ -13,7 +13,7 @@ WINDOWS_SUPPORT = "unity-windows-support-for-editor"
 UNITY = "unity"
 
 BETA_BASE_URL = "http://beta.unity3d.com/download"
-BASE_URL = "http://netstorage.unity3d.com/unity"
+BASE_URL = "http://download.unity3d.com/download_unity"
 
 def unity_base_url beta
   if beta
