@@ -42,6 +42,6 @@ cask 'unity@5.6.1p1' do
     end
   end
 
-  uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.UnityEditor5.x'
+  uninstall quit:    '',
+            pkgutil: ''
 end

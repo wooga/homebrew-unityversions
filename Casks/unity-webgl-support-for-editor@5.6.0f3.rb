@@ -50,5 +50,5 @@ cask 'unity-webgl-support-for-editor@5.6.0f3' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.WebGLSupport'
+  uninstall pkgutil: ''
 end

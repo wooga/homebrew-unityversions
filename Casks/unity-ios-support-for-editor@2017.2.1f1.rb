@@ -50,5 +50,5 @@ cask 'unity-ios-support-for-editor@2017.2.1f1' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.iOSSupport'
+  uninstall pkgutil: ''
 end

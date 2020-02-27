@@ -51,5 +51,5 @@ cask 'unity-standard-assets@2017.3.1f1' do
   end
 
   uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.StandardAssets'
+            pkgutil: ''
 end
