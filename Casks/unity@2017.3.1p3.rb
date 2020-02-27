@@ -2,7 +2,7 @@ require 'fileutils'
 
 cask 'unity@2017.3.1p3' do
   version '2017.3.1p3,a66397957d3b'
-  sha256 'f1930d3ce551a8b73c0e354d80ac4c7ed8a5297eba972d2f6c66adb2dc625e4f'
+  sha256 '83fa8f2d4f430ce927a66b568361d1877908bb582d1b5ebb3c6bfab8acc6241c'
 
   url "http://beta.unity3d.com/download/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
   name 'Unity Editor'
@@ -42,6 +42,6 @@ cask 'unity@2017.3.1p3' do
     end
   end
 
-  uninstall quit:    'com.unity3d.UnityEditor5.x',
-            pkgutil: 'com.unity3d.UnityEditor5.x'
+  uninstall quit:    '',
+            pkgutil: ''
 end

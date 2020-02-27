@@ -1,6 +1,6 @@
 cask 'unity-windows-support-for-editor@2018.4.5f1' do
   version '2018.4.5f1,7b38f8ac282e'
-  sha256 'e09bff19332395fac3ec7a5e96733f11296389e31d02b127937d2d1fff9c9e80'
+  sha256 '4befa79b6049b3795b0756511d551414f7ce17fd9948a436f23d5b2ea14bd6d3'
 
   url "http://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Windows-Support-for-Editor-#{version.before_comma}.pkg"
   name 'Unity Windows Build Support'

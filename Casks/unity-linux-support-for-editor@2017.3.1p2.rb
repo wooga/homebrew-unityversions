@@ -50,5 +50,5 @@ cask 'unity-linux-support-for-editor@2017.3.1p2' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.LinuxStandaloneSupport'
+  uninstall pkgutil: ''
 end
