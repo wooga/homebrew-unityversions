@@ -2,7 +2,7 @@ require 'fileutils'
 
 cask 'unity@2019.4.25f1' do
   version '2019.4.25f1,01a0494af254'
-  sha256 'd81261b8b587258041ff98a5acdde792a784f2c52db2fc092ae2d6802a29f4c4'
+  sha256 'af42652afaa3c7eb24ac601b131e331a9a4b3f02fdbf61d315d2a083bb8023c1'
 
   url "http://download.unity3d.com/download_unity/#{version.after_comma}/MacEditorInstaller/Unity.pkg"
   name 'Unity Editor'
